@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rose & Olive Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="top">
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">🍽️</div>
+      <div>
+        <div class="brand__name">Rose & Olive</div>
+        <div class="brand__sub">Modern British Restaurant</div>
+      </div>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="#contact">Call</a>
+      <a class="btn btn--primary" href="#menu">Order online</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="pill">Dine in • Collection • Delivery</span>
+      <h1>Fresh British Food<br>Served Daily</h1>
+      <p class="lead">
+        Seasonal ingredients, classic flavours, and modern presentation.
+        Order online or reserve a table in seconds.
+      </p>
+
+      <div class="hero__buttons">
+        <a class="btn btn--primary" href="#menu">View menu</a>
+        <a class="btn btn--ghost" href="#contact">Book a table</a>
+      </div>
+
+      <div class="trust">
+        <div class="trust__item">✓ Online ordering</div>
+        <div class="trust__item">✓ Table booking</div>
+        <div class="trust__item">✓ Local delivery</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__top">
+        <span class="badge">Reserve table</span>
+        <span class="mini">Instant confirmation</span>
+      </div>
+
+      <form class="form">
+        <label>Name <input placeholder="Your name"></label>
+        <label>Date <input type="date"></label>
+        <label>Guests
+          <select>
+            <option>2 people</option>
+            <option>4 people</option>
+            <option>6 people</option>
+          </select>
+        </label>
+        <button class="btn btn--primary btn--full" type="button">
+          Book now
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="container">
+    <h2>Menu</h2>
+
+    <div class="grid">
+      <div class="box">
+        <div class="box__title">Fish & Chips</div>
+        <p>Beer battered cod, chips, tartar sauce</p>
+        <strong>£12.95</strong>
+        <button class="btn btn--ghost btn--full" onclick="order('Fish & Chips')">
+          Order
+        </button>
+      </div>
+
+      <div class="box">
+        <div class="box__title">Sunday Roast</div>
+        <p>Roast beef, potatoes, veg & gravy</p>
+        <strong>£14.50</strong>
+        <button class="btn btn--ghost btn--full" onclick="order('Sunday Roast')">
+          Order
+        </button>
+      </div>
+
+      <div class="box">
+        <div class="box__title">Classic Burger</div>
+        <p>British beef, cheddar, fries</p>
+        <strong>£11.95</strong>
+        <button class="btn btn--ghost btn--full" onclick="order('Classic Burger')">
+          Order
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="contact">
+  <div class="container">
+    <h2>Order & Contact</h2>
+    <div class="ctaRow">
+      <a class="btn btn--primary" href="https://wa.me/447000000000" target="_blank">
+        Order on WhatsApp
+      </a>
+      <a class="btn btn--ghost" href="tel:+447000000000">
+        Call restaurant
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand">Rose & Olive</div>
+      <p class="muted">Demo restaurant website by Thrive Group Solutions</p>
+    </div>
+    <div class="footer__links">
+      <a href="#menu">Menu</a>
+      <a href="#contact">Order</a>
+    </div>
+    <div class="footer__contact">
+      <div>📞 +44 7000 000000</div>
+      <div>📍 London, UK</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
