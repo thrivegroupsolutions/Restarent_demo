@@ -1,141 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <title>Rose & Olive Restaurant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rose & Olive Restaurant | Order Online (Demo)</title>
+  <meta name="description" content="Restaurant demo website with menu, cart and checkout. Built by Thrive Group Solutions." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <div class="brand__mark" aria-hidden="true">R&O</div>
+        <div class="brand__text">
+          <div class="brand__name">Rose & Olive</div>
+          <div class="brand__tag">Modern British • London</div>
+        </div>
+      </a>
 
-<header class="top">
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo">🍽️</div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#menu">Menu</a>
+        <a href="#how">How it works</a>
+        <a href="#checkout">Checkout</a>
+      </nav>
+
+      <button class="cartBtn" id="openCartBtn" type="button" aria-label="Open cart">
+        <span class="cartBtn__icon" aria-hidden="true">🛒</span>
+        <span class="cartBtn__text">Cart</span>
+        <span class="cartBtn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="pill">Order online • Collection or Delivery • Demo checkout</p>
+          <h1>Fresh food, fast ordering.</h1>
+          <p class="lead">
+            This is a demo restaurant website showing a simple menu, cart, and checkout flow.
+            Perfect for restaurants, cafés and takeaways in the UK.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#menu">View menu</a>
+            <a class="btn btn--ghost" href="#checkout">Go to checkout</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust__item">✅ Clear menu & pricing</div>
+            <div class="trust__item">✅ Cart + checkout flow</div>
+            <div class="trust__item">✅ Mobile-first layout</div>
+          </div>
+        </div>
+
+        <aside class="heroCard">
+          <div class="heroCard__top">
+            <div class="badge">Today’s favourites</div>
+            <div class="muted small">Tap “Add to cart”</div>
+          </div>
+
+          <div class="miniMenu">
+            <div class="miniMenu__row">
+              <div>
+                <div class="miniMenu__name">Fish & Chips</div>
+                <div class="miniMenu__desc">Tartar sauce, mushy peas</div>
+              </div>
+              <div class="miniMenu__price">£12.95</div>
+            </div>
+            <div class="miniMenu__row">
+              <div>
+                <div class="miniMenu__name">Classic Burger</div>
+                <div class="miniMenu__desc">Cheddar, fries</div>
+              </div>
+              <div class="miniMenu__price">£11.95</div>
+            </div>
+            <div class="miniMenu__row">
+              <div>
+                <div class="miniMenu__name">Margherita Pizza</div>
+                <div class="miniMenu__desc">Mozzarella, basil</div>
+              </div>
+              <div class="miniMenu__price">£10.50</div>
+            </div>
+          </div>
+
+          <a class="btn btn--primary btn--full" href="#menu">Start an order</a>
+          <p class="small muted">Demo only: no payment collected.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Menu</h2>
+          <p class="muted">Simple, UK-friendly items with clear pricing. Add items to cart and checkout.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Menu categories">
+          <button class="tab is-active" data-cat="mains" type="button">Mains</button>
+          <button class="tab" data-cat="sides" type="button">Sides</button>
+          <button class="tab" data-cat="drinks" type="button">Drinks</button>
+        </div>
+
+        <div class="menuGrid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>How online ordering works</h2>
+          <p class="muted">A simple flow that customers understand instantly.</p>
+        </div>
+
+        <div class="howGrid">
+          <div class="howCard">
+            <div class="howNum">1</div>
+            <div>
+              <div class="howTitle">Choose items</div>
+              <div class="muted">Tap “Add to cart” from the menu.</div>
+            </div>
+          </div>
+          <div class="howCard">
+            <div class="howNum">2</div>
+            <div>
+              <div class="howTitle">Review cart</div>
+              <div class="muted">Update quantities or remove items.</div>
+            </div>
+          </div>
+          <div class="howCard">
+            <div class="howNum">3</div>
+            <div>
+              <div class="howTitle">Checkout</div>
+              <div class="muted">Delivery/collection + contact details.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="section" id="checkout">
+      <div class="container checkout">
+        <div class="checkout__left">
+          <div class="sectionHead">
+            <h2>Checkout</h2>
+            <p class="muted">Fill details and place a demo order. (No payment is taken.)</p>
+          </div>
+
+          <form class="form" id="checkoutForm">
+            <div class="row2">
+              <div class="field">
+                <label for="fullName">Full name</label>
+                <input id="fullName" name="fullName" type="text" placeholder="e.g. John Smith" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="e.g. 07..." required />
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="field">
+                <label for="orderType">Order type</label>
+                <select id="orderType" name="orderType">
+                  <option value="collection">Collection</option>
+                  <option value="delivery">Delivery</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="time">Preferred time</label>
+                <select id="time" name="time">
+                  <option>ASAP (demo)</option>
+                  <option>30 mins</option>
+                  <option>60 mins</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" id="addressField">
+              <label for="address">Delivery address</label>
+              <input id="address" name="address" type="text" placeholder="House number + street + postcode" />
+            </div>
+
+            <div class="field">
+              <label for="notes">Order notes (optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Allergies, no onions, extra sauce..."></textarea>
+            </div>
+
+            <button class="btn btn--primary btn--full" type="submit">Place order (demo)</button>
+            <p class="small muted">Demo: shows confirmation message only.</p>
+          </form>
+        </div>
+
+        <aside class="checkout__right">
+          <div class="summary">
+            <div class="summary__head">
+              <div class="summary__title">Order summary</div>
+              <button class="btn btn--ghost btn--small" type="button" id="clearCartBtn">Clear</button>
+            </div>
+
+            <div class="summary__items" id="summaryItems"></div>
+
+            <div class="summary__totals">
+              <div class="totalRow">
+                <span class="muted">Subtotal</span>
+                <strong id="subtotal">£0.00</strong>
+              </div>
+              <div class="totalRow">
+                <span class="muted">Delivery</span>
+                <strong id="deliveryFee">£0.00</strong>
+              </div>
+              <div class="divider"></div>
+              <div class="totalRow totalRow--big">
+                <span>Total</span>
+                <strong id="total">£0.00</strong>
+              </div>
+            </div>
+
+            <div class="hint">
+              Tip: Add items from the menu, then come back here to place the demo order.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART DRAWER -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawerOverlay"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Cart drawer">
+      <div class="drawer__head">
+        <div class="drawer__title">Your cart</div>
+        <button class="iconBtn" id="closeCartBtn" type="button" aria-label="Close cart">✕</button>
+      </div>
+
+      <div class="drawer__items" id="drawerItems"></div>
+
+      <div class="drawer__foot">
+        <div class="drawer__footRow">
+          <span class="muted">Subtotal</span>
+          <strong id="drawerSubtotal">£0.00</strong>
+        </div>
+        <a class="btn btn--primary btn--full" href="#checkout" id="goCheckoutBtn">Go to checkout</a>
+        <p class="small muted">Demo: no payment collected.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Order confirmation">
+      <div class="modal__title">Order received ✅ (demo)</div>
+      <p class="muted" id="confirmText">Thanks! Your order has been received.</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" id="newOrderBtn" type="button">Start a new order</button>
+        <a class="btn btn--primary" href="#menu" id="backMenuBtn">Back to menu</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
       <div>
-        <div class="brand__name">Rose & Olive</div>
-        <div class="brand__sub">Modern British Restaurant</div>
+        <div class="footer__brand">Rose & Olive</div>
+        <div class="muted small">Demo website by Thrive Group Solutions • Website-only ordering flow</div>
       </div>
+      <div class="muted small">© <span id="year"></span></div>
     </div>
-    <div class="nav__actions">
-      <a class="btn btn--ghost" href="#contact">Call</a>
-      <a class="btn btn--primary" href="#menu">Order online</a>
-    </div>
-  </div>
-</header>
+  </footer>
 
-<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <span class="pill">Dine in • Collection • Delivery</span>
-      <h1>Fresh British Food<br>Served Daily</h1>
-      <p class="lead">
-        Seasonal ingredients, classic flavours, and modern presentation.
-        Order online or reserve a table in seconds.
-      </p>
-
-      <div class="hero__buttons">
-        <a class="btn btn--primary" href="#menu">View menu</a>
-        <a class="btn btn--ghost" href="#contact">Book a table</a>
-      </div>
-
-      <div class="trust">
-        <div class="trust__item">✓ Online ordering</div>
-        <div class="trust__item">✓ Table booking</div>
-        <div class="trust__item">✓ Local delivery</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card__top">
-        <span class="badge">Reserve table</span>
-        <span class="mini">Instant confirmation</span>
-      </div>
-
-      <form class="form">
-        <label>Name <input placeholder="Your name"></label>
-        <label>Date <input type="date"></label>
-        <label>Guests
-          <select>
-            <option>2 people</option>
-            <option>4 people</option>
-            <option>6 people</option>
-          </select>
-        </label>
-        <button class="btn btn--primary btn--full" type="button">
-          Book now
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="menu">
-  <div class="container">
-    <h2>Menu</h2>
-
-    <div class="grid">
-      <div class="box">
-        <div class="box__title">Fish & Chips</div>
-        <p>Beer battered cod, chips, tartar sauce</p>
-        <strong>£12.95</strong>
-        <button class="btn btn--ghost btn--full" onclick="order('Fish & Chips')">
-          Order
-        </button>
-      </div>
-
-      <div class="box">
-        <div class="box__title">Sunday Roast</div>
-        <p>Roast beef, potatoes, veg & gravy</p>
-        <strong>£14.50</strong>
-        <button class="btn btn--ghost btn--full" onclick="order('Sunday Roast')">
-          Order
-        </button>
-      </div>
-
-      <div class="box">
-        <div class="box__title">Classic Burger</div>
-        <p>British beef, cheddar, fries</p>
-        <strong>£11.95</strong>
-        <button class="btn btn--ghost btn--full" onclick="order('Classic Burger')">
-          Order
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="contact">
-  <div class="container">
-    <h2>Order & Contact</h2>
-    <div class="ctaRow">
-      <a class="btn btn--primary" href="https://wa.me/447000000000" target="_blank">
-        Order on WhatsApp
-      </a>
-      <a class="btn btn--ghost" href="tel:+447000000000">
-        Call restaurant
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer__grid">
-    <div>
-      <div class="footer__brand">Rose & Olive</div>
-      <p class="muted">Demo restaurant website by Thrive Group Solutions</p>
-    </div>
-    <div class="footer__links">
-      <a href="#menu">Menu</a>
-      <a href="#contact">Order</a>
-    </div>
-    <div class="footer__contact">
-      <div>📞 +44 7000 000000</div>
-      <div>📍 London, UK</div>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
